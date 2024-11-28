@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Summarizer</title>
+    <style>
+        /* Reset and general styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .form-container label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-container input[type="file"],
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            background: #4facfe;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #00c3fe;
+        }
+
+        .form-container button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #00f2fe;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎥 Video Summarizer 🎬</h1>
+    <div class="form-container">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="video">Upload Video:</label>
+            <input type="file" name="video" id="video" accept="video/*" required>
+            
+            <label for="threshold">Threshold (default: 20):</label>
+            <input type="number" name="threshold" id="threshold" step="0.1" value="20">
+            
+            <button type="submit">Summarize Video</button>
+        </form>
+    </div>
+    <footer>
+        
+    </footer>
+</body>
+</html>
